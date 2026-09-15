@@ -1,11 +1,11 @@
-# .github/workflows/backend.yml
-name: Backend CI
+# .github/workflows/react-ci.yml
+name: React CI
 
 on:
   push:
     branches: [master]
     paths:
-      - 'backend/**'
+      - 'app-crud/**'
       - '.github/workflows/react-ci.yml'
 
 jobs:
