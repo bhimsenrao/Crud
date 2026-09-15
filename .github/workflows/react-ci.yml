@@ -5,7 +5,7 @@ on:
   push:
     branches: [master]
     paths:
-      - 'app-crud/**'
+      - 'server/**'
       - '.github/workflows/react-ci.yml'
 
 jobs:
@@ -21,9 +21,9 @@ jobs:
 
       - name: Install backend dependencies
         run: npm ci
-        working-directory: ./app-crud
+        working-directory: ./server
 
       - name: Run tests (optional)
         run: npm test
-        working-directory: ./app-crud
+        working-directory: ./server
         continue-on-error: true
