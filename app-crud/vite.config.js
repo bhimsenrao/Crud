@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite'
 import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
+// import babel from '@rolldown/plugin-babel'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] })
-  ],
+  plugins: [react()],
+  base: '/Crud/',  // Change to your repo name
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true
+      }
+    }
+  }
 })
